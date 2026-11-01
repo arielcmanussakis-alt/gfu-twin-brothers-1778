@@ -68,9 +68,9 @@ def paper_png():
 PAPER = paper_png()
 
 # ---------------- defs
-TREE = '<g id="tree"><path d="M0 -38 C28 -38 34 -6 18 4 C32 18 6 28 0 22 C-8 30 -32 18 -20 4 C-34 -6 -24 -38 0 -38Z" class="tr"/><path d="M0 18 L0 44" class="trk"/></g>'
-ANCHOR = '<g id="anchor"><circle cy="-120" r="28" class="ank"/><path d="M0 -92 V120 M-70 -50 H70 M-120 40 C-110 120 -40 140 0 120 C40 140 110 120 120 40 M-120 40 l-30 30 M120 40 l30 30" class="ank"/></g>'
-CROSS = '<path id="grave" d="M0 -26 V26 M-14 -10 H14" class="grv"/>'
+TREE = '<g id="tree" transform="scale(1.15)"><path d="M0 -38 C28 -38 34 -6 18 4 C32 18 6 28 0 22 C-8 30 -32 18 -20 4 C-34 -6 -24 -38 0 -38Z" fill="#ece0ba" stroke="#2f2216" stroke-width="7"/><path d="M0 18 L0 44" stroke="#2f2216" stroke-width="8"/></g>'
+ANCHOR = '<g id="anchor"><circle cy="-120" r="28" fill="none" stroke="#2f2216" stroke-width="20" stroke-linecap="round"/><path d="M0 -92 V120 M-70 -50 H70 M-120 40 C-110 120 -40 140 0 120 C40 140 110 120 120 40 M-120 40 l-30 30 M120 40 l30 30" fill="none" stroke="#2f2216" stroke-width="20" stroke-linecap="round"/></g>'
+CROSS = '<path id="grave" d="M0 -26 V26 M-14 -10 H14" fill="none" stroke="#2f2216" stroke-width="10"/>'
 out.append(f'''<defs>
 <pattern id="paper" patternUnits="userSpaceOnUse" width="5200" height="5200"><image href="data:image/jpeg;base64,{PAPER}" width="5200" height="5200" preserveAspectRatio="none"/></pattern>
 <radialGradient id="vign" cx="50%" cy="48%" r="72%"><stop offset="60%" stop-color="#7a5a2c" stop-opacity="0"/><stop offset="100%" stop-color="#6b4a1e" stop-opacity=".28"/></radialGradient>

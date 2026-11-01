@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=IM+Fell+Double+Pica:ital@0;1&family=IM+Fell+Great+Primer:ital@0;1&display=swap");
+/* Janela da carta: palco com a carta à esquerda, painel de pergaminho à direita. */
+.gfu-atlas{--ink:#2f2216;--sepia:#6e5537;--red:#9a2b1e;--sea-ink:#3f5f60;--parch:#efe3c3;--parch-2:#e5d6b0;--table:#3a2d22;
+  --f-title:"IM Fell Great Primer","IM Fell English","GFS Baskerville",Baskerville,Georgia,serif;
+  --f-cap:"IM Fell Double Pica","IM Fell English","GFS Baskerville",Baskerville,Georgia,serif;
+  --f-body:"IM Fell English","GFS Baskerville",Baskerville,Georgia,serif;
+  --f-sc:"IM Fell English SC","IM Fell English","GFS Baskerville",Baskerville,Georgia,serif}
+.gfu-atlas .window-content{padding:0;overflow:hidden;background:var(--table)}
+.gfu-atlas .g78-wrap{display:flex;height:100%;min-height:0;font-family:var(--f-body);color:var(--ink)}
+.gfu-atlas .g78-stage{position:relative;flex:1;min-width:0;background:var(--table);touch-action:none;cursor:grab;overflow:hidden}
+.gfu-atlas .g78-stage.drag{cursor:grabbing}
+.gfu-atlas .g78-stage svg.g78-map{width:100%;height:100%;display:block;user-select:none}
+.gfu-atlas .g78-zoom{position:absolute;left:10px;top:10px;display:flex;flex-direction:column;gap:6px}
+.gfu-atlas .g78-zoom button{width:34px;height:34px;padding:0;line-height:1;font:20px var(--f-body);background:var(--parch);color:var(--ink);border:1px solid var(--ink);border-radius:2px;cursor:pointer}
+.gfu-atlas .g78-zoom button.wide{font:12px var(--f-sc)}
+.gfu-atlas .g78-side{width:340px;flex:none;background:var(--parch);border-left:1px solid #000;overflow-y:auto;padding:14px 16px 24px;display:flex;flex-direction:column;gap:18px}
+.gfu-atlas .g78-side h3{font:14px var(--f-sc);letter-spacing:.14em;color:var(--sepia);margin:0 0 6px;border-bottom:1px solid rgba(47,34,22,.25);padding-bottom:3px;font-weight:400}
+.gfu-atlas .g78-mode{display:flex;border:1px solid var(--ink);border-radius:2px;overflow:hidden;align-self:flex-start}
+.gfu-atlas .g78-mode button{font:15px var(--f-sc);background:transparent;color:var(--ink);border:0;border-radius:0;padding:4px 12px;margin:0;cursor:pointer;width:auto;line-height:1.4}
+.gfu-atlas .g78-mode button[aria-pressed="true"]{background:var(--ink);color:var(--parch)}
+.gfu-atlas.mestre .g78-mode button[data-mode="mestre"][aria-pressed="true"],.gfu-atlas .mestre .g78-mode button[data-mode="mestre"][aria-pressed="true"]{background:var(--red);color:#f5e9cf}
+.gfu-atlas .g78-card{display:flex;flex-direction:column;gap:8px}
+.gfu-atlas .g78-card .k{display:flex;gap:10px;align-items:center}
+.gfu-atlas .g78-card .lt{font:19px var(--f-sc);width:32px;height:32px;border-radius:50%;border:1.5px solid var(--ink);display:inline-flex;align-items:center;justify-content:center;flex:none}
+.gfu-atlas .g78-card .lt.gm{border-color:var(--red);color:var(--red)}
+.gfu-atlas .g78-card h2{font:24px var(--f-cap);margin:0;border:0;line-height:1.05}
+.gfu-atlas .g78-card .onde{font-style:italic;color:var(--sepia);font-size:14px}
+.gfu-atlas .g78-text,.gfu-atlas .g78-secret{font-size:15px;line-height:1.4}
+.gfu-atlas .g78-text p,.gfu-atlas .g78-secret p{margin:0 0 6px}
+.gfu-atlas .g78-secret{border:1px solid var(--red);padding:8px 10px;background:rgba(154,43,30,.05)}
+.gfu-atlas .g78-secret h2{font:13px var(--f-sc);letter-spacing:.12em;color:var(--red);margin:8px 0 2px;border:0}
+.gfu-atlas .g78-secret ul{margin:0;padding-left:16px}
+.gfu-atlas .g78-secret-h{font:13px var(--f-sc);letter-spacing:.16em;color:var(--red)}
+.gfu-atlas .g78-actions{display:flex;gap:6px;flex-wrap:wrap}
+.gfu-atlas .g78-actions button{font:13px var(--f-sc);width:auto;padding:2px 10px;background:var(--parch-2);color:var(--ink);border:1px solid var(--ink);border-radius:2px}
+.gfu-atlas .g78-empty{font-style:italic;color:var(--sepia);margin:0;font-size:14px}
+.gfu-atlas .g78-refs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1px}
+.gfu-atlas .g78-refs button{all:unset;cursor:pointer;display:flex;gap:10px;align-items:baseline;padding:3px 6px;width:calc(100% - 12px);border-radius:2px;font-size:15px}
+.gfu-atlas .g78-refs button:hover,.gfu-atlas .g78-refs button[aria-current="true"]{background:var(--parch-2)}
+.gfu-atlas .g78-refs .l{font:14px var(--f-sc);width:16px;color:var(--sepia)}
+.gfu-atlas .g78-refs li.gm{display:none}.gfu-atlas .g78-refs li.gm .l{color:var(--red)}
+.gfu-atlas .mestre .g78-refs li.gm{display:block}
+.gfu-atlas .g78-layers{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;font-size:14px}
+.gfu-atlas .g78-layers label{display:flex;gap:6px;align-items:center}
+.gfu-atlas .g78-layers input{margin:0;width:14px;height:14px;accent-color:var(--ink)}
+.gfu-atlas .g78-map .g78-gm{display:none}
+.gfu-atlas .mestre .g78-map .g78-gm{display:inline}
+.gfu-atlas .g78-map .ref.gm .ref-c{stroke:var(--red)}
+.gfu-atlas .g78-map .ref.gm .ref-t{fill:var(--red)!important}
+.gfu-atlas .g78-map .ref.gm:hover .ref-c,.gfu-atlas .g78-map .ref.gm.sel .ref-c{fill:var(--red)}
+.gfu-atlas .g78-map .gm-note{paint-order:stroke;stroke:#efe2bf;stroke-linejoin:round}
+.gfu-atlas .g78-map text{font-family:var(--f-body);fill:var(--ink)}
+.gfu-atlas .g78-map .lyr.off{display:none}
+.gfu-atlas .g78-map .ribbon{fill:none;stroke:#4f7f7a;stroke-linejoin:round}
+.gfu-atlas .g78-map .land{fill:#f4e8c6;fill-opacity:.42}
+.gfu-atlas .g78-map .lwash{fill:none;stroke:#9c9a55;stroke-linejoin:round}
+.gfu-atlas .g78-map .coast{fill:none;stroke:var(--ink);stroke-width:22;stroke-linejoin:round}
+.gfu-atlas .g78-map .wl{fill:none;stroke:var(--sea-ink);stroke-width:7;opacity:.5}
+.gfu-atlas .g78-map .rh{stroke:var(--sepia);stroke-width:5;opacity:.32}
+.gfu-atlas .g78-map .rhM{stroke-width:10;opacity:.42}
+.gfu-atlas .g78-map .shoal{fill:none;stroke:#5a4630;stroke-width:13;stroke-dasharray:1 46;stroke-linecap:round}
+.gfu-atlas .g78-map .snd text{font-style:italic;font-size:175px;fill:#45372a}
+.gfu-atlas .g78-map .hc{fill:none;stroke:var(--ink);stroke-linecap:round;stroke-linejoin:round;opacity:.84}
+.gfu-atlas .g78-map .tr{fill:#ece0ba;stroke:var(--ink);stroke-width:7}
+.gfu-atlas .g78-map .trk{stroke:var(--ink);stroke-width:8}
+.gfu-atlas .g78-map .river{fill:#cfd5c0;stroke:var(--ink);stroke-width:9}
+.gfu-atlas .g78-map .brook{fill:none;stroke:var(--sea-ink);stroke-width:20;stroke-linecap:round}
+.gfu-atlas .g78-map .sd1{fill:none;stroke:#8a6d43;stroke-width:90;stroke-dasharray:2 64;stroke-linecap:round;opacity:.55}
+.gfu-atlas .g78-map .sd2{fill:none;stroke:#8a6d43;stroke-width:60;stroke-dasharray:2 52;stroke-linecap:round;opacity:.45;transform:translate(0,-70px)}
+.gfu-atlas .g78-map .rd1{fill:none;stroke:var(--ink);stroke-width:44;stroke-linejoin:round;stroke-linecap:round}
+.gfu-atlas .g78-map .rd2{fill:none;stroke:#efe2bf;stroke-width:22;stroke-linejoin:round;stroke-linecap:round}
+.gfu-atlas .g78-map .trail{fill:none;stroke:var(--ink);stroke-width:16;stroke-dasharray:2 70;stroke-linecap:round;opacity:.8}
+.gfu-atlas .g78-map .ferry{fill:none;stroke:var(--ink);stroke-width:14;stroke-dasharray:60 70}
+.gfu-atlas .g78-map .pier{stroke:var(--ink);stroke-width:34}
+.gfu-atlas .g78-map .street{fill:none;stroke:var(--ink);stroke-width:9;opacity:.45}
+.gfu-atlas .g78-map .blk{fill:var(--ink);opacity:.8}
+.gfu-atlas .g78-map .chap{fill:#5c3d26;stroke:var(--ink);stroke-width:12}
+.gfu-atlas .g78-map .court{fill:#efe2bf}
+.gfu-atlas .g78-map .crs{stroke:var(--ink);stroke-width:18;fill:none}
+.gfu-atlas .g78-map .gal{fill:none;stroke:var(--ink);stroke-width:14}
+.gfu-atlas .g78-map .fld{fill:#cdbb87;fill-opacity:.35;stroke:var(--ink);stroke-width:7}
+.gfu-atlas .g78-map .fldl{stroke:var(--ink);stroke-width:4;opacity:.5}
+.gfu-atlas .g78-map .hut{fill:var(--ink)}
+.gfu-atlas .g78-map .flake{stroke:var(--ink);stroke-width:9}
+.gfu-atlas .g78-map .yard{fill:none;stroke:var(--ink);stroke-width:9;stroke-dasharray:30 18}
+.gfu-atlas .g78-map .grv{stroke:var(--ink);stroke-width:10;fill:none}
+.gfu-atlas .g78-map .stone{fill:var(--ink)}
+.gfu-atlas .g78-map .cave{fill:none;stroke:var(--ink);stroke-width:24}
+.gfu-atlas .g78-map .ank{fill:none;stroke:var(--ink);stroke-width:20;stroke-linecap:round}
+.gfu-atlas .g78-map #g78-lyr-names text,.gfu-atlas .g78-map .note-i,.gfu-atlas .g78-map .gm-note{paint-order:stroke;stroke:#efe2bf;stroke-linejoin:round}
+.gfu-atlas .g78-map .l-ocean{font-family:var(--f-title)!important;font-style:italic;font-size:840px;stroke-width:0!important;fill:#3b3a33!important}
+.gfu-atlas .g78-map .l-bay{font-family:var(--f-title)!important;font-style:italic;font-size:700px;stroke-width:0!important;fill:#3b3a33!important}
+.gfu-atlas .g78-map .l-water{font-style:italic;font-size:380px;stroke-width:60px}
+.gfu-atlas .g78-map .l-small{font-style:italic;font-size:220px;stroke-width:60px}
+.gfu-atlas .g78-map .l-isle{font-style:italic;font-size:320px;stroke-width:70px}
+.gfu-atlas .g78-map .l-town{font-family:var(--f-sc)!important;font-size:430px;stroke-width:110px}
+.gfu-atlas .g78-map .l-mount{font-family:var(--f-cap)!important;font-size:480px;stroke-width:120px}
+.gfu-atlas .g78-map .l-vale{font-style:italic;font-size:460px;stroke-width:120px}
+.gfu-atlas .g78-map .l-range{font-family:var(--f-cap)!important;font-size:660px;stroke-width:0!important;opacity:.78}
+.gfu-atlas .g78-map .l-island{font-family:var(--f-title)!important;font-size:880px;stroke-width:0!important;opacity:.36}
+.gfu-atlas .g78-map .l-point{font-style:italic;font-size:320px;stroke-width:80px}
+.gfu-atlas .g78-map .l-river{font-style:italic;font-size:320px;fill:var(--sea-ink)!important;stroke-width:80px}
+.gfu-atlas .g78-map .l-road{font-style:italic;font-size:260px;stroke-width:70px}
+.gfu-atlas .g78-map .note-i{font-style:italic;font-size:250px;stroke-width:0}
+.gfu-atlas .g78-map .r-ring{fill:#efe2bf;fill-opacity:.55;stroke:var(--ink);stroke-width:16}
+.gfu-atlas .g78-map .r-ring2{fill:none;stroke:var(--ink);stroke-width:6}
+.gfu-atlas .g78-map .r-hub{fill:#efe2bf;stroke:var(--ink);stroke-width:10}
+.gfu-atlas .g78-map .r-tick{stroke:var(--ink);stroke-width:6}
+.gfu-atlas .g78-map .r-d{fill:var(--ink)}
+.gfu-atlas .g78-map .r-l{fill:#f2e6c6;stroke:var(--ink);stroke-width:6}
+.gfu-atlas .g78-map .r-fl{fill:var(--ink)}
+.gfu-atlas .g78-map .r-cross{stroke:var(--ink);stroke-width:26;fill:none}
+.gfu-atlas .g78-map .r-lab{font-family:var(--f-cap)!important;font-size:420px}
+.gfu-atlas .g78-map .sc-o{fill:none;stroke:var(--ink);stroke-width:14}
+.gfu-atlas .g78-map .sc-b{fill:var(--ink)}
+.gfu-atlas .g78-map .sc-tick{stroke:var(--ink);stroke-width:6}
+.gfu-atlas .g78-map .sc-t{font-style:italic;font-size:320px}
+.gfu-atlas .g78-map .sc-l{font-size:250px}
+.gfu-atlas .g78-map .rm-h{font-family:var(--f-sc)!important;font-size:340px;letter-spacing:60px}
+.gfu-atlas .g78-map .rm{font-style:italic;font-size:290px}
+.gfu-atlas .g78-map .rm-rule{stroke:var(--ink);stroke-width:8}
+.gfu-atlas .g78-map .ct-bg{fill:#f2e7c8;fill-opacity:.93}
+.gfu-atlas .g78-map .ct-o{fill:none;stroke:var(--ink);stroke-width:40}
+.gfu-atlas .g78-map .ct-i{fill:none;stroke:var(--ink);stroke-width:10}
+.gfu-atlas .g78-map .ct-fl{fill:none;stroke:var(--ink);stroke-width:14}
+.gfu-atlas .g78-map .ct-rule{stroke:var(--ink);stroke-width:10}
+.gfu-atlas .g78-map .ct-dia{fill:var(--ink)}
+.gfu-atlas .g78-map .ct-1{font-family:var(--f-title)!important;font-size:560px}
+.gfu-atlas .g78-map .ct-2{font-style:italic;font-size:390px}
+.gfu-atlas .g78-map .ct-3{font-family:var(--f-cap)!important;font-size:760px}
+.gfu-atlas .g78-map .ct-4{font-style:italic;font-size:330px}
+.gfu-atlas .g78-map .ct-5{font-family:var(--f-sc)!important;font-size:300px}
+.gfu-atlas .g78-map .nl{fill:none;stroke:var(--ink);stroke-width:24}
+.gfu-atlas .g78-map .nl2{fill:none;stroke:var(--ink);stroke-width:20}
+.gfu-atlas .g78-map .nl3{fill:none;stroke:var(--ink);stroke-width:55}
+.gfu-atlas .g78-map .gb{fill:var(--ink)}
+.gfu-atlas .g78-map .grad{font-family:var(--f-sc)!important;font-size:330px}
+.gfu-atlas .g78-map .grad-t,.gfu-atlas .g78-map .imprint{font-style:italic;font-size:300px}
+.gfu-atlas .g78-map .ref{cursor:pointer}
+.gfu-atlas .g78-map .ref-hit{fill:transparent}
+.gfu-atlas .g78-map .ref-c{fill:#f2e6c6;stroke:var(--ink);stroke-width:26}
+.gfu-atlas .g78-map .ref-t{font-family:var(--f-sc)!important;font-size:250px}
+.gfu-atlas .g78-map .ref:hover .ref-c,.gfu-atlas .g78-map .ref.sel .ref-c{fill:var(--ink)}
+.gfu-atlas .g78-map .ref:hover .ref-t,.gfu-atlas .g78-map .ref.sel .ref-t{fill:#f2e6c6!important}
+.gfu-atlas .g78-map .ref:focus{outline:none}
+.gfu-atlas .g78-map .ref:focus-visible .ref-c{stroke:var(--red);stroke-width:40}
+.gfu-atlas .g78-map .gm-note{font-style:italic;font-size:270px;fill:var(--red)!important;stroke-width:70px}
+.gfu-atlas .g78-map *{scroll-behavior:auto}

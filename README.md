@@ -7,20 +7,30 @@ Módulo para Foundry VTT v14 com a carta náutica de 1778 da ilha que um dia ser
 | Fase | O que entrega | Situação |
 | --- | --- | --- |
 | 1 | Carta de 1778 (desenho, nomes, referências) | pronta para revisão |
-| 2 | Fichas dos locais da Sessão 1 | em andamento |
-| 3 | Módulo .zip: cena, Notas de Mapa, diário e atlas interativo | a fazer |
+| 2 | Fichas dos locais da Sessão 1 | pronta |
+| 3 | Módulo: cena, Notas de Mapa, diário e carta interativa | v0.1.0, em teste |
 | 4 | Edição de nomes e descrições no próprio mapa | a fazer |
-| 5 | Instalação por link (manifest) | a decidir |
+| 5 | Instalação por link (manifest) | pronta |
+
+## Instalar no Foundry
+
+Em **Configuração → Módulos de complemento → Instalar módulo**, cole no campo **URL do manifesto**:
+
+```
+https://github.com/arielcmanussakis-alt/gfu-twin-brothers-1778/releases/latest/download/module.json
+```
+
+Ative o módulo no mundo. Na primeira vez, o Mestre recebe uma janela para instalar a carta: ela cria a cena, o diário dos locais com as Notas de Mapa e a macro **Carta de 1778**. O arquivo de segredos do Mestre pode ser escolhido nessa janela ou importado depois em **Configurações → Configurar módulos**.
 
 ## O que tem aqui
 
+- `modulo/`: o módulo em si (é o conteúdo do `module.zip` de cada versão).
 - `carta/carta-1778.svg`: a carta na visão dos jogadores. Abre em qualquer navegador.
-- `dados/locais-jogadores.json`: as referências A a G, com posição na carta (em metros) e o texto que os jogadores podem ler.
 - `ferramentas/carta/`: os scripts que geram a carta a partir da geometria do Atlas de Gemini.
 
 ## Segredos do Mestre
 
-Este repositório é público. Os segredos do Ato I (o que cada local esconde, as notas em vermelho e o local H) **não ficam aqui**. No módulo, eles vão para páginas do diário que só o Mestre vê.
+Este repositório é público. Os segredos do Ato I (o que cada local esconde, as notas em vermelho e o local H) **não ficam aqui**. Eles vêm num arquivo `.json` à parte, entregue ao Mestre, que o módulo importa para um diário que só o Mestre vê.
 
 ## A carta
 

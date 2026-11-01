@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=IM+Fell+Double+Pica:ital@0;1&family=IM+Fell+Great+Primer:ital@0;1&display=swap");
+/* Janela da carta: palco com a carta à esquerda, painel de pergaminho à direita. */
+.gfu-atlas{--ink:#2f2216;--sepia:#6e5537;--red:#9a2b1e;--sea-ink:#3f5f60;--parch:#efe3c3;--parch-2:#e5d6b0;--table:#3a2d22;
+  --f-title:"IM Fell Great Primer","IM Fell English","GFS Baskerville",Baskerville,Georgia,serif;
+  --f-cap:"IM Fell Double Pica","IM Fell English","GFS Baskerville",Baskerville,Georgia,serif;
+  --f-body:"IM Fell English","GFS Baskerville",Baskerville,Georgia,serif;
+  --f-sc:"IM Fell English SC","IM Fell English","GFS Baskerville",Baskerville,Georgia,serif}
+.gfu-atlas .window-content{padding:0;overflow:hidden;background:var(--table)}
+.gfu-atlas .g78-wrap{display:flex;height:100%;min-height:0;font-family:var(--f-body);color:var(--ink)}
+.gfu-atlas .g78-stage{position:relative;flex:1;min-width:0;background:var(--table);touch-action:none;cursor:grab;overflow:hidden}
+.gfu-atlas .g78-stage.drag{cursor:grabbing}
+.gfu-atlas .g78-stage svg.g78-map{width:100%;height:100%;display:block;user-select:none}
+.gfu-atlas .g78-zoom{position:absolute;left:10px;top:10px;display:flex;flex-direction:column;gap:6px}
+.gfu-atlas .g78-zoom button{width:34px;height:34px;padding:0;line-height:1;font:20px var(--f-body);background:var(--parch);color:var(--ink);border:1px solid var(--ink);border-radius:2px;cursor:pointer}
+.gfu-atlas .g78-zoom button.wide{font:12px var(--f-sc)}
+.gfu-atlas .g78-side{width:340px;flex:none;background:var(--parch);border-left:1px solid #000;overflow-y:auto;padding:14px 16px 24px;display:flex;flex-direction:column;gap:18px}
+.gfu-atlas .g78-side h3{font:14px var(--f-sc);letter-spacing:.14em;color:var(--sepia);margin:0 0 6px;border-bottom:1px solid rgba(47,34,22,.25);padding-bottom:3px;font-weight:400}
+.gfu-atlas .g78-mode{display:flex;border:1px solid var(--ink);border-radius:2px;overflow:hidden;align-self:flex-start}
+.gfu-atlas .g78-mode button{font:15px var(--f-sc);background:transparent;color:var(--ink);border:0;border-radius:0;padding:4px 12px;margin:0;cursor:pointer;width:auto;line-height:1.4}
+.gfu-atlas .g78-mode button[aria-pressed="true"]{background:var(--ink);color:var(--parch)}
+.gfu-atlas.mestre .g78-mode button[data-mode="mestre"][aria-pressed="true"],.gfu-atlas .mestre .g78-mode button[data-mode="mestre"][aria-pressed="true"]{background:var(--red);color:#f5e9cf}
+.gfu-atlas .g78-card{display:flex;flex-direction:column;gap:8px}
+.gfu-atlas .g78-card .k{display:flex;gap:10px;align-items:center}
+.gfu-atlas .g78-card .lt{font:19px var(--f-sc);width:32px;height:32px;border-radius:50%;border:1.5px solid var(--ink);display:inline-flex;align-items:center;justify-content:center;flex:none}
+.gfu-atlas .g78-card .lt.gm{border-color:var(--red);color:var(--red)}
+.gfu-atlas .g78-card h2{font:24px var(--f-cap);margin:0;border:0;line-height:1.05}
+.gfu-atlas .g78-card .onde{font-style:italic;color:var(--sepia);font-size:14px}
+.gfu-atlas .g78-text,.gfu-atlas .g78-secret{font-size:15px;line-height:1.4}
+.gfu-atlas .g78-text p,.gfu-atlas .g78-secret p{margin:0 0 6px}
+.gfu-atlas .g78-secret{border:1px solid var(--red);padding:8px 10px;background:rgba(154,43,30,.05)}
+.gfu-atlas .g78-secret h2{font:13px var(--f-sc);letter-spacing:.12em;color:var(--red);margin:8px 0 2px;border:0}
+.gfu-atlas .g78-secret ul{margin:0;padding-left:16px}
+.gfu-atlas .g78-secret-h{font:13px var(--f-sc);letter-spacing:.16em;color:var(--red)}
+.gfu-atlas .g78-actions{display:flex;gap:6px;flex-wrap:wrap}
+.gfu-atlas .g78-actions button{font:13px var(--f-sc);width:auto;padding:2px 10px;background:var(--parch-2);color:var(--ink);border:1px solid var(--ink);border-radius:2px}
+.gfu-atlas .g78-empty{font-style:italic;color:var(--sepia);margin:0;font-size:14px}
+.gfu-atlas .g78-refs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1px}
+.gfu-atlas .g78-refs button{all:unset;cursor:pointer;display:flex;gap:10px;align-items:baseline;padding:3px 6px;width:calc(100% - 12px);border-radius:2px;font-size:15px}
+.gfu-atlas .g78-refs button:hover,.gfu-atlas .g78-refs button[aria-current="true"]{background:var(--parch-2)}
+.gfu-atlas .g78-refs .l{font:14px var(--f-sc);width:16px;color:var(--sepia)}
+.gfu-atlas .g78-refs li.gm{display:none}.gfu-atlas .g78-refs li.gm .l{color:var(--red)}
+.gfu-atlas .mestre .g78-refs li.gm{display:block}
+.gfu-atlas .g78-layers{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;font-size:14px}
+.gfu-atlas .g78-layers label{display:flex;gap:6px;align-items:center}
+.gfu-atlas .g78-layers input{margin:0;width:14px;height:14px;accent-color:var(--ink)}
+.gfu-atlas .g78-map .g78-gm{display:none}
+.gfu-atlas .mestre .g78-map .g78-gm{display:inline}
+.gfu-atlas .g78-map .ref.gm .ref-c{stroke:var(--red)}
+.gfu-atlas .g78-map .ref.gm .ref-t{fill:var(--red)!important}
+.gfu-atlas .g78-map .ref.gm:hover .ref-c,.gfu-atlas .g78-map .ref.gm.sel .ref-c{fill:var(--red)}
+.gfu-atlas .g78-map .gm-note{paint-order:stroke;stroke:#efe2bf;stroke-linejoin:round}

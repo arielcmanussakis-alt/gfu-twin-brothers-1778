@@ -1,0 +1,124 @@
+{
+ "versao": 1,
+ "cena": {
+  "W": 7000,
+  "H": 6788,
+  "km_por_100px": 0.6836
+ },
+ "carta": {
+  "viewBox": [
+   -8400.0,
+   -4200.0,
+   47850.0,
+   46400.0
+  ]
+ },
+ "intro": "<p>Esta carta foi levantada em 1776 e 1777 e publicada em 1778. Mostra a costa leste da Ilha dos Dois Irmãos, da vila de Kembleton, no Marco Zero, até Porto Norte. Os nomes são os que os colonos usam.</p>\n<h2>Como ler</h2>\n<ul><li>Os números no mar são profundidades em braças. Uma braça tem 1,83 m.</li>\n<li>A escala é em léguas marítimas. Uma légua tem 3 milhas, ou 5,56 km.</li>\n<li>As letras de A a G marcam os lugares que a Ordem conhece. Cada uma abre uma página deste diário.</li></ul>\n<h2>Distâncias</h2>\n<ul><li>De Kembleton à outra margem do Estreito: 1.8 km de bote.</li>\n<li>Do desembarque a Porto Norte pela Estrada da Falésia: cerca de 19 km, de 4 a 5 horas a pé.</li>\n<li>Os dois montes da Serra dos Gêmeos: Irmão Mais Velho, 1.204 m, e Irmão Mais Novo, 1.198 m.</li></ul>\n<h2>A carta interativa</h2>\n<p>A macro <strong>Carta de 1778</strong>, ou o botão com o mapa na barra das Notas, abre a carta com zoom e as fichas dos lugares.</p>",
+ "locais": [
+  {
+   "id": "chapter",
+   "letra": "A",
+   "nome": "Capela e Casa Capitular",
+   "onde": "Kembleton, no alto do Marco Zero",
+   "m": [
+    16500,
+    21500
+   ],
+   "px": [
+    3643,
+    3760
+   ],
+   "html": "<p>Um armazém de pedra de 1740, comprado pela Ordem de São Paulo e convertido em convento militar no alto do Marco Zero. Três andares em volta de um pátio: capela, refeitório, arsenal e dormitórios. No pátio fica uma estufa abandonada que a Ordem chama de Câmara de Vidro. O mar bate nas pedras lá embaixo.</p><p><em>Na carta: letra A, Kembleton, no alto do Marco Zero.</em></p>"
+  },
+  {
+   "id": "kembleton",
+   "letra": "B",
+   "nome": "Kembleton",
+   "onde": "Marco Zero",
+   "m": [
+    18850,
+    21250
+   ],
+   "px": [
+    3986,
+    3723
+   ],
+   "html": "<p>A vila do Marco Zero. Povoado de madeira e pedra com igreja pequena, cais de pesca e forca na praça. Cerca de 300 almas. Leva o nome de John Kemble, o militar que fundou a vila. O bote para a outra margem do Estreito sai do cais.</p><p><em>Na carta: letra B, Marco Zero.</em></p>"
+  },
+  {
+   "id": "road",
+   "letra": "C",
+   "nome": "Estrada da Falésia",
+   "onde": "do Estreito a Porto Norte",
+   "m": [
+    18150,
+    13800
+   ],
+   "px": [
+    3884,
+    2633
+   ],
+   "html": "<p>Uma travessia de bote pelo Estreito e depois 4 a 5 horas a pé até Porto Norte, por um caminho de cabras na encosta. À direita, o mar. À esquerda, ao longe, do outro lado da baía, o Irmão Mais Velho. No alto dele, mesmo de longe, dá para ver o círculo de pedras em pé, como dentes. Não há pássaros sobre ele.</p><p><em>Na carta: letra C, do Estreito a Porto Norte.</em></p>"
+  },
+  {
+   "id": "harbour",
+   "letra": "D",
+   "nome": "Porto Norte",
+   "onde": "enseada no norte da ilha",
+   "m": [
+    12300,
+    2300
+   ],
+   "px": [
+    3028,
+    951
+   ],
+   "html": "<p>Uma vila de vinte choupanas na encosta, um armazém que serve de taberna (o Anzol Torto) e uma praia coberta de estrados de madeira onde o bacalhau seca ao sol. Metade dos homens foi para o corso; a outra metade tem medo da noite.</p><p><em>Na carta: letra D, enseada no norte da ilha.</em></p>"
+  },
+  {
+   "id": "cave",
+   "letra": "E",
+   "nome": "Gruta da Maré",
+   "onde": "falésia ao norte de Porto Norte",
+   "m": [
+    11300,
+    350
+   ],
+   "px": [
+    2882,
+    666
+   ],
+   "html": "<p>Uma caverna marinha ao norte da vila, que só se alcança a pé na maré baixa. A entrada é uma boca negra na falésia, com algas penduradas como cabelo. Lá dentro, o som do mar fica abafado, como se viesse de outro cômodo.</p><p><em>Na carta: letra E, falésia ao norte de Porto Norte.</em></p>"
+  },
+  {
+   "id": "grave",
+   "letra": "F",
+   "nome": "Cemitério da Ponta",
+   "onde": "Ponta do Cemitério",
+   "m": [
+    21750,
+    18600
+   ],
+   "px": [
+    4411,
+    3335
+   ],
+   "html": "<p>Campo de cruzes tortas fora da vila, na ponta do outro lado da enseada. Os colonos chamam a península de Ponta do Cemitério.</p><p><em>Na carta: letra F, Ponta do Cemitério.</em></p>"
+  },
+  {
+   "id": "stones",
+   "letra": "G",
+   "nome": "Círculo de pedras",
+   "onde": "topo do Irmão Mais Velho",
+   "m": [
+    -1150,
+    21050
+   ],
+   "px": [
+    1061,
+    3694
+   ],
+   "html": "<p>No topo do Irmão Mais Velho, um monte de pedra nua, há um círculo de menires mais antigo que os colonos. Ninguém sobe à noite. Os colonos dizem Irmão Mais Velho; a Ordem chama o monte de Gólgota.</p><p><em>Na carta: letra G, topo do Irmão Mais Velho.</em></p>"
+  }
+ ]
+}
