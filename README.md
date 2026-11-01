@@ -17,7 +17,7 @@ Módulo para Foundry VTT v14 com a carta náutica de 1778 da ilha que um dia ser
 Em **Configuração → Módulos de complemento → Instalar módulo**, cole no campo **URL do manifesto**:
 
 ```
-https://github.com/arielcmanussakis-alt/gfu-twin-brothers-1778/releases/latest/download/module.json
+https://raw.githubusercontent.com/arielcmanussakis-alt/gfu-twin-brothers-1778/main/modulo/module.json
 ```
 
 Ative o módulo no mundo. Na primeira vez, o Mestre recebe uma janela para instalar a carta: ela cria a cena, o diário dos locais com as Notas de Mapa e a macro **Carta de 1778**. O arquivo de segredos do Mestre pode ser escolhido nessa janela ou importado depois em **Configurações → Configurar módulos**.
