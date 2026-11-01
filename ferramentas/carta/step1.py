@@ -1,0 +1,13 @@
+from geo import *
+land=fill([G['land'][0]])
+isl=fill(G['island'])
+lake=fill(G['lake'])
+riv=fill(G['river'])
+cont=stroke(G['cont'],th=1); contm=stroke(G['contmajor'],th=1)
+np.save('land.npy',land);np.save('isl.npy',isl)
+vis=np.full((NY,NX,3),(200,215,225),np.uint8)
+vis[land>0]=(230,235,230); vis[isl>0]=(230,235,230)
+vis[cont>0]=(150,150,150); vis[contm>0]=(60,60,60)
+vis[lake>0]=(200,120,60); vis[riv>0]=(220,140,40)
+cv2.imwrite('step1.png',cv2.resize(vis,(NX//3,NY//3),interpolation=cv2.INTER_AREA))
+print(NX,NY,(land>0).mean())
